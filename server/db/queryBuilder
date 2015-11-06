@@ -1,0 +1,13 @@
+var QueryBuilder = {};
+
+var QueryException = function(message) {
+	this.name 		= "QueryException";
+	this.message 	= message;
+};
+
+QueryBuilder.select = function(columns) {
+	//Make sure we have an array because we're going to iterate over it later
+	if(!Array.isArray(columns)) {
+		throw new QueryException("Error: the first arugment passed to select must be an array.");
+	}
+}
